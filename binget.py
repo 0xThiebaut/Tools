@@ -124,7 +124,6 @@ def download(url: str, prefix: str = '', suffix: str = ''):
     utime(name, (modified, modified))
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     parser = ArgumentParser(
         description='Binget is a simple wget for Bing intended to easily download search query matches '
