@@ -5,6 +5,7 @@ from email.message import EmailMessage
 from email.parser import HeaderParser
 from email.policy import default
 from fileinput import input
+from math import log10
 from os import environ
 from os.path import join
 from random import choice
@@ -283,8 +284,8 @@ if __name__ == "__main__":
                 break
 
         try:
-            count = f"{{:0{(args.count // 10) + 1}d}}".format(i)
-            depth = f"{{:0{(args.depth // 10) + 1}d}}".format(args.depth - 1)
+            count = f"{{:0{int(log10(args.count)) + 1}d}}".format(i)
+            depth = f"{{:0{int(log10(args.depth)) + 1}d}}".format(args.depth - 1)
             with open(
                 join(args.dir, f"{sender.address.username} - {count} - {depth}.eml"),
                 mode="w",
